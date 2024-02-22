@@ -45,6 +45,11 @@ public class JWTGenerator {
 	}
 
     public boolean validateToken(String token) {
+
+		/*
+		 * I am a bit sceptical about this.
+		 * Why it is not checking if the token is valid or not?
+		 */
 		try {
 			Jwts.parserBuilder()
 			.setSigningKey(key)

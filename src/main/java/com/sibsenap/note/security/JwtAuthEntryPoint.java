@@ -10,6 +10,11 @@ import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
+/*
+ * This handles the exceptions, 
+ * This is because it is happening before it reaches the servlet
+ */
+
 @Component
 public class JwtAuthEntryPoint implements AuthenticationEntryPoint{
 
@@ -21,5 +26,5 @@ public class JwtAuthEntryPoint implements AuthenticationEntryPoint{
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED, authException.getMessage());
         // throw new UnsupportedOperationException("Unimplemented method 'commence'");
     }
-    
+
 }
